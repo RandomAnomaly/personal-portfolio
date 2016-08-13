@@ -17,6 +17,12 @@ and open the template in the editor.
     background-repeat: no-repeat;
 }
 
+#section2 .col-lg-4, #section3 .col-lg-4, #section4 .col-lg-4 {
+    background-image: url("laptop.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
+
 #section1 path {
   animation: dash 2s linear forwards;
 }
@@ -56,7 +62,7 @@ and open the template in the editor.
 
 
 
-
+ 
 
 
 
