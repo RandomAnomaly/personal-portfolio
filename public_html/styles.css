@@ -18,11 +18,14 @@ and open the template in the editor.
 }
 
 #section1 {
-    background-image: url(http://dummyimage.com/600x400/000/fff&text=+);
+    background-color: #277554;
 }
 #section2 {
-    background-image: url(http://dummyimage.com/600x400/ad1c39/fff&text=+);
+    background-color: #294F6D;
 }
 #section3 {
-    background-image: url(http://dummyimage.com/600x400/000/fff&text=+);
+    background-color: #609732;
+}
+#section4 {
+    background-color: #277554;
 }
