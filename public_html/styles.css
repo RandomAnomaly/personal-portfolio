@@ -9,9 +9,7 @@ and open the template in the editor.
 */
 
 .section {
-    /* the important one*/
     background-attachment: fixed; 
- 
     background-size: auto 80%;
     background-position: 50% 0%;
     background-repeat: no-repeat;
@@ -19,6 +17,7 @@ and open the template in the editor.
 
 #section2 .col-lg-4, #section3 .col-lg-4, #section4 .col-lg-4 {
     background-image: url("laptop.svg");
+    
     background-repeat: no-repeat;
     background-position: 50% 0%;
 }
@@ -34,7 +33,7 @@ and open the template in the editor.
 }
 
 
-#section1 {
+#section1, #section3 {
     background-color: #277554;
 }
 
@@ -52,27 +51,14 @@ and open the template in the editor.
     color: black;
 }
 
-.nameSection i {
-    padding-top: 15px;
-    font-size: 80pt;
-    color: black;
-}
-
-
-
-
-
- 
-
-
-
-
-#section2 {
+#section2, #section4 {
     background-color: #294F6D;
 }
-#section3 {
-    background-color: #609732;
+
+#section1 h1, #section1 p {
+    text-align: right;
 }
-#section4 {
-    background-color: #277554;
+
+#section2 h1, #section2 p {
+    text-align: right;
 }
