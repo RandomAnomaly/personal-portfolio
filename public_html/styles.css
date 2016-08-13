@@ -20,6 +20,35 @@ and open the template in the editor.
 #section1 {
     background-color: #277554;
 }
+
+.nameSection h1, h2{
+    padding-left: 15%;
+}
+
+.nameSection h1 {
+    color: black;
+}
+
+.nameSection h2 {
+    font-size: 20pt;
+    color: black;
+}
+
+.nameSection i {
+    padding-top: 15px;
+    font-size: 80pt;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
 #section2 {
     background-color: #294F6D;
 }
