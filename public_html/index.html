@@ -1,16 +1,31 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!doctype html>
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Full Screen Scrolling with Page Piling Effect Demo</title>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/alvarotrigo/pagePiling.js/master/jquery.pagepiling.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/alvarotrigo/pagePiling.js/master/jquery.pagepiling.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#pagepiling').pagepiling();
+            });
+        </script>
+        
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="pagepiling">
+            <div class="section">Section 1</div>
+            <div class="section">Section 2</div>
+            <div class="section">Section 3</div>
+            <div class="section">Section 4</div>
+        </div>
+
+        
     </body>
 </html>

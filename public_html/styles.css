@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-Aug-2016, 14:19:10
+    Author     : Rando
+*/
+
+.section {
+    /* the important one*/
+    background-attachment: fixed; 
+ 
+    background-size: auto 80%;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+}
+
+#section1 {
+    background-image: url(http://dummyimage.com/600x400/000/fff&text=+);
+}
+#section2 {
+    background-image: url(http://dummyimage.com/600x400/ad1c39/fff&text=+);
+}
+#section3 {
+    background-image: url(http://dummyimage.com/600x400/000/fff&text=+);
+}
