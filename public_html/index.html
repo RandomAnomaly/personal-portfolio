@@ -32,7 +32,9 @@
                             height="100%"
                             viewBox="0 0 551.66284 338.68146"
                             >
-
+                        <filter id="blur">
+                            <feGaussianBlur  in="SourceGraphic" stdDeviation="0.5"/>
+                        </filter>
                         <g id="laptop">
                         <g
                             inkscape:groupmode="layer"
@@ -285,6 +287,14 @@
                             id="path4328"
                             inkscape:connector-curvature="0" />
                         </g>
+                        <g id="statusLights">
+                        <rect class="statusLightsOrange" x="123" y="318" width="3" height="6" />
+                        
+                        
+                        <rect class="statusLightsWhite" x="112" y="318" width="3" height="6" />
+                        <rect class="statusLightsGreen" x="101" y="318" width="3" height="6" />
+                        <rect class="statusLightsGreen" x="90" y="318" width="3" height="6" />
+                        </g>
                         </g>
                         </svg>
                         <h1>work with agility</h1>
@@ -307,6 +317,8 @@
                             height="100%"
                             viewBox="0 0 551.66284 338.68146"
                             >
+                        <use xlink:href="#laptop" />
+
                         </svg>
                         <h1>minimise waste with devops</h1>
                         <p>totally automated deployment pipelines ensure new code is available for testing as and when it is committed</p>
@@ -323,6 +335,7 @@
                             height="100%"
                             viewBox="0 0 551.66284 338.68146"
                             >
+                        <use xlink:href="#laptop" />
                         </svg>
                         <h1>beautiful code to delight and amaze</h1>
                         <p>develop using the latest in frameworks and algorithms</p>
