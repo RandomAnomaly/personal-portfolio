@@ -23,8 +23,8 @@ $(document).ready(function () {
         }
     });
 
-    var orangeLight = document.querySelectorAll('.statusLightsOrange');
-    //window.setInterval(flashLight(orangeLight, 'orange'), 1000);
+    var orangeLight = document.querySelector('.statusLightsOrange');
+    window.setInterval(flashLight(orangeLight, 'orange'), 1000);
     
     var whiteLight = document.querySelector('.statusLightsWhite');
     window.setInterval(flashLight(whiteLight, 'white'),500);
