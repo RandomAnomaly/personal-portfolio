@@ -67,10 +67,18 @@ and open the template in the editor.
     fill: orange;
 }
 
-.statusLightsGreen {
+.statusLightsGreen, .statusLightsGreen2 {
     fill: green;
 }
 
 .statusLightsWhite {
     fill: white;
+}
+
+#section1 .screenBackground rect, #section3 .screenBackground rect {
+    fill: #75AF96;
+}
+
+#section2 .screenBackground rect {
+    fill: #718EA4;
 }

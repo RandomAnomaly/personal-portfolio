@@ -20,7 +20,9 @@ $(document).ready(function () {
         element.style.strokeDashoffset = length;
     }
 
-    var orangeLight = document.querySelector('.statusLightsOrange');
+    var i = 0;
+
+    var orangeLight = document.querySelectorAll('.statusLightsOrange');
     window.setInterval(flashLight(orangeLight, 'orange'), 1000);
     
     var whiteLight = document.querySelector('.statusLightsWhite');
@@ -40,7 +42,6 @@ function flashLight(element, color) {
     return function () {
         var e = element;
         var c = color;
-        
         (e.style.fill === 'black') ? e.style.fill = c : e.style.fill = 'black';
-    }
+    };
 }
