@@ -33,10 +33,6 @@ $(document).ready(function () {
     window.setInterval(flashLight(greenLight, 'green'),1500);
 });
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 function flashLight(element, color) {
     return function () {
         var e = element;
@@ -45,27 +41,42 @@ function flashLight(element, color) {
     };
 }
 
+/** 
+ * Animates the laptop off the screen. I haven't refactored this to use apply
+ * style to svg path array, as each path needs a unique array value
+ * @returns {undefined}
+ */
 function clearLaptop() {
-    
     var paths = document.querySelectorAll('#section2 path');
-
     for (var i = 0; i < paths.length; i++) {
         var element = paths[i];
         var length = element.getTotalLength();
-        
-        element.style.transition = "stroke-dashoffset 0.5s linear";
-        element.style.strokeDasharray = length;
-        element.style.strokeDashoffset = length;
+        var styles = { transition: "stroke-dashoffset 0.5s linear",
+            offset: length, array: length };
+        applyStyleToSvgPath(element, styles);
     }
 }
 
 function animateInLaptop() {
-    
     var paths = document.querySelectorAll('#section2 path');
+    var style = { transition: "stroke-dashoffset 1s linear", offset: 0 };
+    applyStyleToSvgPathArray(paths, style);
+}
 
-    for (var i = 0; i < paths.length; i++) {
-        var element = paths[i];
-        element.style.transition = "stroke-dashoffset 2s linear";
-        element.style.strokeDashoffset = 0;
+function applyStyleToSvgPathArray(pathArray, style){
+    for(var i = 0; i < pathArray.length; i += 1){
+        var element = pathArray[i];
+        applyStyleToSvgPath(element, style);
+    }
+}
+
+function applyStyleToSvgPath(path, styles){
+    var pathStyles = path.style;
+    
+    pathStyles.transition = styles.transition;
+    pathStyles.strokeDashoffset = styles.offset;
+    
+    if(styles.array){
+        pathStyles.strokeDasharray = styles.array;
     }
 }

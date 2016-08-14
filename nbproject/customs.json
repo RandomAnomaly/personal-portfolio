@@ -1,8 +1,14 @@
 {
     "elements": {},
     "attributes": {
+        "sodipodi:type": {
+            "context": "path"
+        },
         "inkscape:connector-curvature": {
             "context": "path"
+        },
+        "inkscape:groupmode": {
+            "context": "g"
         }
     }
 }
