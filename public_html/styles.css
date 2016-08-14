@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 .screenBackground rect {
-    fill: #656E92;
+    fill: #FFDAAA;
 }
 
 .section {
@@ -26,6 +26,8 @@ and open the template in the editor.
 #section2 {
     background-color: #AA7939;
 }
+
+
 #section2 h1, #section2 p {
     text-align: center;
 }

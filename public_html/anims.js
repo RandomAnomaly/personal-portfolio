@@ -22,7 +22,7 @@ $(document).ready(function () {
             }
         }
     });
-
+    
     var orangeLight = document.querySelector('.statusLightsOrange');
     window.setInterval(flashLight(orangeLight, 'orange'), 1000);
     
