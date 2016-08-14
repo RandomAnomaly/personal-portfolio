@@ -9,7 +9,6 @@ var animLength = 1000;
 $(document).ready(function () {
     // Apply page piling
     $('#pagepiling').pagepiling({
-
     });
 
     var paths = document.querySelectorAll('#section1 path');
@@ -21,10 +20,27 @@ $(document).ready(function () {
         element.style.strokeDashoffset = length;
     }
 
-
+    var orangeLight = document.querySelector('.statusLightsOrange');
+    window.setInterval(flashLight(orangeLight, 'orange'), 1000);
+    
+    var whiteLight = document.querySelector('.statusLightsWhite');
+    window.setInterval(flashLight(whiteLight, 'white'),500);
+    
+    var greenLight = document.querySelector('.statusLightsGreen');
+    window.setInterval(flashLight(greenLight, 'green'),1500);
 });
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
+
+function flashLight(element, color) {
+    return function () {
+        var e = element;
+        var c = color;
+        
+        (e.style.fill === 'black') ? e.style.fill = c : e.style.fill = 'black';
+    }
+}
