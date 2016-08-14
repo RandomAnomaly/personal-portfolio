@@ -11,7 +11,7 @@ $(document).ready(function () {
     $('#pagepiling').pagepiling({
     });
 
-    var paths = document.querySelectorAll('#section1 path');
+    var paths = document.querySelectorAll('#section2 path');
 
     for (var i = 0; i < paths.length; i++) {
         var element = paths[i];

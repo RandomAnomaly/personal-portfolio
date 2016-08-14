@@ -15,15 +15,14 @@ and open the template in the editor.
     background-repeat: no-repeat;
 }
 
-#section2 .col-lg-4, #section3 .col-lg-4, #section4 .col-lg-4 {
-    
-    
-    background-repeat: no-repeat;
-    background-position: 50% 0%;
+
+
+#section2 path {
+  animation: dash 2s linear forwards;
 }
 
-#section1 path {
-  animation: dash 2s linear forwards;
+#section1{
+    background-color: white;
 }
 
 @keyframes dash {
@@ -33,9 +32,6 @@ and open the template in the editor.
 }
 
 
-#section1, #section3 {
-    
-}
 
 .nameSection h1, h2{
     text-align: center;
@@ -51,13 +47,9 @@ and open the template in the editor.
     color: black;
 }
 
-#section2, #section4 {
-    
-}
 
-#section1 h1, #section1 p {
-    text-align: right;
-}
+
+
 
 #section2 h1, #section2 p {
     text-align: center;
