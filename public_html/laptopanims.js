@@ -7,7 +7,7 @@
 var animLength = 1000;
 
 $(document).ready(function () {
-    // Apply page piping
+    // Apply page piling
     $('#pagepiling').pagepiling({
 
     });
@@ -22,6 +22,9 @@ $(document).ready(function () {
     }
 
 
-
-
 });
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
