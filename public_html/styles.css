@@ -20,9 +20,12 @@ and open the template in the editor.
 }
 
 #section1{
-    background-color: white;
+    background-color: #256F5C;
 }
 
+#section2 {
+    background-color: #AA7939;
+}
 #section2 h1, #section2 p {
     text-align: center;
 }
@@ -37,22 +40,4 @@ and open the template in the editor.
 
 .statusLightsWhite {
     fill: white;
-}
-
-.nameSection h1, h2{
-    text-align: center;
-    padding-left: 15%;
-}
-
-.nameSection h1 {
-    color: black;
-}
-
-.nameSection h2 {
-    font-size: 20pt;
-    color: black;
-}
-
-.jumbotron {
-    background-color: #FBE4C5;
 }
