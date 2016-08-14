@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : Rando
 */
 
+.screenBackground rect {
+    fill: #656E92;
+}
+
 .section {
     background-attachment: fixed; 
     background-size: auto 80%;
@@ -15,21 +19,25 @@ and open the template in the editor.
     background-repeat: no-repeat;
 }
 
-
-
-
-
 #section1{
     background-color: white;
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
+#section2 h1, #section2 p {
+    text-align: center;
 }
 
+.statusLightsGreen, .statusLightsGreen2 {
+    fill: green;
+}
 
+.statusLightsOrange {
+    fill: orange;
+}
+
+.statusLightsWhite {
+    fill: white;
+}
 
 .nameSection h1, h2{
     text-align: center;
@@ -43,30 +51,6 @@ and open the template in the editor.
 .nameSection h2 {
     font-size: 20pt;
     color: black;
-}
-
-
-
-
-
-#section2 h1, #section2 p {
-    text-align: center;
-}
-
-.statusLightsOrange {
-    fill: orange;
-}
-
-.statusLightsGreen, .statusLightsGreen2 {
-    fill: green;
-}
-
-.statusLightsWhite {
-    fill: white;
-}
-
-.screenBackground rect {
-    fill: #656E92;
 }
 
 .jumbotron {
