@@ -34,7 +34,7 @@ and open the template in the editor.
 
 
 #section1, #section3 {
-    background-color: #277554;
+    
 }
 
 .nameSection h1, h2{
@@ -52,7 +52,7 @@ and open the template in the editor.
 }
 
 #section2, #section4 {
-    background-color: #294F6D;
+    
 }
 
 #section1 h1, #section1 p {
@@ -75,10 +75,10 @@ and open the template in the editor.
     fill: white;
 }
 
-#section1 .screenBackground rect, #section3 .screenBackground rect {
-    fill: #75AF96;
+.screenBackground rect {
+    fill: #656E92;
 }
 
-#section2 .screenBackground rect {
-    fill: #718EA4;
+.jumbotron {
+    background-color: #FBE4C5;
 }
