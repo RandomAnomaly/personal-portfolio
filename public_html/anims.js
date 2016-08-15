@@ -7,6 +7,7 @@
 
 $(document).ready(function () {
     clearLaptop();
+    clearTachy();
     // Apply page piling
     $('#pagepiling').pagepiling({
         
@@ -19,6 +20,15 @@ $(document).ready(function () {
             // leave laptop screen
             if(index === 2){
                 clearLaptop();
+            }
+            
+            //enter tachy screen
+            if(nextIndex === 3){
+                animateInTachy();
+            }
+            //leave tachy screen
+            if(index === 3){
+                clearTachy();
             }
         }
     });
@@ -41,11 +51,6 @@ function flashLight(element, color) {
     };
 }
 
-/** 
- * Animates the laptop off the screen. I haven't refactored this to use apply
- * style to svg path array, as each path needs a unique array value
- * @returns {undefined}
- */
 function clearLaptop() {
     var paths = document.querySelectorAll('#section2 path');
     for (var i = 0; i < paths.length; i++) {
@@ -59,6 +64,23 @@ function clearLaptop() {
 
 function animateInLaptop() {
     var paths = document.querySelectorAll('#section2 path');
+    var style = { transition: "stroke-dashoffset 1s linear", offset: 0 };
+    applyStyleToSvgPathArray(paths, style);
+}
+
+function clearTachy(){
+    var paths = document.querySelectorAll('#section3 path');
+    for (var i = 0; i < paths.length; i++) {
+        var element = paths[i];
+        var length = element.getTotalLength();
+        var styles = { transition: "stroke-dashoffset 0.5s linear",
+            offset: length, array: length };
+        applyStyleToSvgPath(element, styles);
+    }
+}
+
+function animateInTachy() {
+    var paths = document.querySelectorAll('#section3 path');
     var style = { transition: "stroke-dashoffset 1s linear", offset: 0 };
     applyStyleToSvgPathArray(paths, style);
 }
