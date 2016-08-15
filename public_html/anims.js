@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 
+
+var enterSpeed = 1;
+var exitSpeed = 0.5;
+
 var display = {
     applyStyleToSvgPath: function (path, styles) {
         var pathStyles = path.style;
@@ -36,14 +40,14 @@ var laptop = {
         for (var i = 0; i < paths.length; i++) {
             var element = paths[i];
             var length = element.getTotalLength();
-            var styles = {transition: "stroke-dashoffset 0.5s linear",
+            var styles = {transition: "stroke-dashoffset " + exitSpeed + "s linear",
                 offset: length, array: length};
             display.applyStyleToSvgPath(element, styles);
         }
     },
     animateInLaptop: function () {
         var paths = document.querySelectorAll('#section2 path');
-        var style = {transition: "stroke-dashoffset 1s linear", offset: 0};
+        var style = {transition: "stroke-dashoffset " + enterSpeed + "s linear", offset: 0};
         display.applyStyleToSvgPathArray(paths, style);
     },
     initialiseLaptop: function () {
@@ -64,14 +68,14 @@ var tachy = {
         for (var i = 0; i < paths.length; i++) {
             var element = paths[i];
             var length = element.getTotalLength();
-            var styles = {transition: "stroke-dashoffset 0.5s linear",
+            var styles = {transition: "stroke-dashoffset " + exitSpeed + "s linear",
                 offset: length, array: length};
             display.applyStyleToSvgPath(element, styles);
         }
     },
     animateInTachy: function () {
         var paths = document.querySelectorAll('#section3 path');
-        var style = {transition: "stroke-dashoffset 1s linear", offset: 0};
+        var style = {transition: "stroke-dashoffset " + enterSpeed + "s linear", offset: 0};
         display.applyStyleToSvgPathArray(paths, style);
     }
 };
