@@ -15,7 +15,6 @@ var display = {
             pathStyles.strokeDasharray = styles.array;
         }
     },
-    
     applyStyleToSvgPathArray: function (pathArray, style) {
         for (var i = 0; i < pathArray.length; i += 1) {
             var element = pathArray[i];
@@ -32,7 +31,6 @@ var laptop = {
             (e.style.fill === 'black') ? e.style.fill = c : e.style.fill = 'black';
         };
     },
-    
     clearLaptop: function () {
         var paths = document.querySelectorAll('#section2 path');
         for (var i = 0; i < paths.length; i++) {
@@ -43,13 +41,11 @@ var laptop = {
             display.applyStyleToSvgPath(element, styles);
         }
     },
-    
     animateInLaptop: function () {
         var paths = document.querySelectorAll('#section2 path');
         var style = {transition: "stroke-dashoffset 1s linear", offset: 0};
         display.applyStyleToSvgPathArray(paths, style);
     },
-    
     initialiseLaptop: function () {
         var orangeLight = document.querySelector('.statusLightsOrange');
         window.setInterval(laptop.flashLight(orangeLight, 'orange'), 1000);
@@ -62,10 +58,28 @@ var laptop = {
     }
 };
 
+var tachy = {
+    clearTachy: function () {
+        var paths = document.querySelectorAll('#section3 path');
+        for (var i = 0; i < paths.length; i++) {
+            var element = paths[i];
+            var length = element.getTotalLength();
+            var styles = {transition: "stroke-dashoffset 0.5s linear",
+                offset: length, array: length};
+            display.applyStyleToSvgPath(element, styles);
+        }
+    },
+    animateInTachy: function () {
+        var paths = document.querySelectorAll('#section3 path');
+        var style = {transition: "stroke-dashoffset 1s linear", offset: 0};
+        display.applyStyleToSvgPathArray(paths, style);
+    }
+};
+
 $(document).ready(function () {
     laptop.initialiseLaptop();
     laptop.clearLaptop();
-    clearTachy();
+    tachy.clearTachy();
     // Apply page piling
     $('#pagepiling').pagepiling({
         onLeave: function (index, nextIndex, direction) {
@@ -81,34 +95,12 @@ $(document).ready(function () {
 
             //enter tachy screen
             if (nextIndex === 3) {
-                animateInTachy();
+                tachy.animateInTachy();
             }
             //leave tachy screen
             if (index === 3) {
-                clearTachy();
+                tachy.clearTachy();
             }
         }
     });
-
-
 });
-
-function clearTachy() {
-    var paths = document.querySelectorAll('#section3 path');
-    for (var i = 0; i < paths.length; i++) {
-        var element = paths[i];
-        var length = element.getTotalLength();
-        var styles = {transition: "stroke-dashoffset 0.5s linear",
-            offset: length, array: length};
-        display.applyStyleToSvgPath(element, styles);
-    }
-}
-
-function animateInTachy() {
-    var paths = document.querySelectorAll('#section3 path');
-    var style = {transition: "stroke-dashoffset 1s linear", offset: 0};
-    display.applyStyleToSvgPathArray(paths, style);
-}
-
-
-
