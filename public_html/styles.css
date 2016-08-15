@@ -27,6 +27,13 @@ and open the template in the editor.
     background-color: #AA7939;
 }
 
+#section3 {
+    background-color: #AA3939;
+}
+
+#section4 {
+    background-color: #256F5C;
+}
 
 #section2 h1, #section2 p {
     text-align: center;
