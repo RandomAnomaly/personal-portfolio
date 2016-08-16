@@ -55,3 +55,8 @@ h1, p {
     -webkit-transform: rotate(-60deg);
     -webkit-transform-origin: 100% 20%;
 }
+
+#outerSquare {
+    fill: black !important;
+    fill-opacity: 0 !important;
+}

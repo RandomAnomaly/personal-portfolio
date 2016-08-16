@@ -27,6 +27,18 @@ var display = {
     }
 };
 
+var card = {
+  initialiseCard: function(){
+      var square = document.querySelector('#outerSquare');
+      square.onmouseover = function(){
+          console.log("enter");
+      };
+      square.onmouseout = function(){
+          console.log("leave");
+      };
+  }
+};
+
 var laptop = {
     flashLight: function (element, color) {
         return function () {
@@ -79,6 +91,9 @@ $(document).ready(function () {
     laptop.initialiseLaptop();
     laptop.clearLaptop();
     tachy.clearTachy();
+    
+    card.initialiseCard();
+    
     // Apply page piling
     $('#pagepiling').pagepiling({
         onLeave: function (index, nextIndex, direction) {
