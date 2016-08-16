@@ -46,6 +46,8 @@ var card = {
         //add button
         tl.to('#button', 0.5, {stroke: "black", fill:"black", opacity:"1"});
         
+        
+        
         var square = document.querySelector('#outerSquare');
         square.onmouseover = function () {
             tl.play();
