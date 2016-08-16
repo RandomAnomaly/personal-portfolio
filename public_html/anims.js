@@ -29,7 +29,8 @@ var display = {
 
 var card = {
     initialiseCard: function () {
-        var square = document.querySelector('#outerSquare');
+        
+        
         var tl = new TimelineLite();
         tl.stop();
         tl.addLabel('cardFadeStart');
@@ -42,10 +43,22 @@ var card = {
         tl.addLabel('spadeMoveStart').to('#spade2', 0.5, {x: "-=59"}).addLabel('spadeMoveIn').to('#spade2', 0.5, {y: "-=70"});
         tl.to('#spade1', 0.5, {x: "+=59"}, 'spadeMoveStart').to('#spade1', 0.5, {y: "+=70"}, 'spadeMoveIn');
         
+        //add button
+        tl.to('#button', 0.5, {stroke: "black", fill:"black", opacity:"1"});
+        
+        var square = document.querySelector('#outerSquare');
         square.onmouseover = function () {
             tl.play();
         };
         square.onmouseout = function () {
+            tl.reverse();
+        };
+        
+        var button =document.querySelector('#button');
+        button.onmouseover = function () {
+            tl.play();
+        };
+        button.onmouseout = function () {
             tl.reverse();
         };
     }
