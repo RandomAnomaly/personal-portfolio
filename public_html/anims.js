@@ -64,19 +64,14 @@ var laptop = {
 
 var tachy = {
     clearTachy: function () {
-        var paths = document.querySelectorAll('#section3 path');
-        for (var i = 0; i < paths.length; i++) {
-            var element = paths[i];
-            var length = element.getTotalLength();
-            var styles = {transition: "stroke-dashoffset " + exitSpeed + "s linear",
-                offset: length, array: length};
-            display.applyStyleToSvgPath(element, styles);
-        }
+        var element = document.querySelector('#pointer');
+        element.style.transition = "all 1s ease";
+        element.style.transform = "rotate(-120deg)";
     },
     animateInTachy: function () {
-        var paths = document.querySelectorAll('#section3 path');
-        var style = {transition: "stroke-dashoffset " + enterSpeed + "s linear", offset: 0};
-        display.applyStyleToSvgPathArray(paths, style);
+        var element = document.querySelector('#pointer');
+        element.style.transition = "all 1s ease";
+        element.style.transform = "rotate(120deg)";
     }
 };
 

@@ -51,3 +51,7 @@ h1, p {
     fill: white;
 }
 
+#pointer {
+    -webkit-transform: rotate(-60deg);
+    -webkit-transform-origin: 100% 20%;
+}
