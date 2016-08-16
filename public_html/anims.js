@@ -31,26 +31,21 @@ var card = {
     initialiseCard: function () {
         var square = document.querySelector('#outerSquare');
         var tl = new TimelineLite();
+        tl.stop();
+        tl.addLabel('cardFadeStart');
+        var pathList = document.querySelectorAll('#section1 path:not(#outerSquare):not(#innerSquare):not(#spade1):not(#spade2)');
         
+        for(var i = 0; i < pathList.length; i += 1){
+            tl.to(pathList[i], 0.5, {opacity: 0}, 'cardFadeStart');
+        }
         
+        tl.addLabel('spadeMoveStart').to('#spade2', 0.5, {x: "-=59"}).addLabel('spadeMoveIn').to('#spade2', 0.5, {y: "-=70"});
+        tl.to('#spade1', 0.5, {x: "+=59"}, 'spadeMoveStart').to('#spade1', 0.5, {y: "+=70"}, 'spadeMoveIn');
         
         square.onmouseover = function () {
-            
-            var pathList = document.querySelectorAll('#section1 path:not(#outerSquare):not(#innerSquare):not(#spade1):not(#spade2)');
-            for (var i = 0; i < pathList.length; i += 1) {
-                TweenMax.to(pathList[i], 0.5, {opacity: 0});
-            }
-            tl.addLabel('spadeMoveStart').to('#spade2', 0.5, {x: "-=60"}).addLabel('spadeMoveIn').to('#spade2', 0.5, {y: "-=60"});
-            tl.to('#spade1', 0.5, {x: "+=60"}, 'spadeMoveStart').to('#spade1', 0.5, {y: "+=60"}, 'spadeMoveIn');
+            tl.play();
         };
         square.onmouseout = function () {
-            
-            var pathList = document.querySelectorAll('#section1 path:not(#outerSquare):not(#innerSquare):not(#spade1):not(#spade2)');
-            for (var i = 0; i < pathList.length; i += 1) {
-                TweenMax.to(pathList[i], 0.5, {opacity: 1});
-            }
-            //TweenLite.to('#spade2', 0.5, {x: "+=60"});
-            //TweenLite.to('#spade1', 0.5, {x: "-=60"});
             tl.reverse();
         };
     }
