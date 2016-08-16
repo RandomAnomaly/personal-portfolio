@@ -28,15 +28,27 @@ var display = {
 };
 
 var card = {
-  initialiseCard: function(){
-      var square = document.querySelector('#outerSquare');
-      square.onmouseover = function(){
-          console.log("enter");
-      };
-      square.onmouseout = function(){
-          console.log("leave");
-      };
-  }
+    initialiseCard: function () {
+        var square = document.querySelector('#outerSquare');
+        square.onmouseover = function () {
+            
+            var pathList = document.querySelectorAll('#section1 path:not(#outerSquare):not(#innerSquare):not(#spade1):not(#spade2)');
+            for (var i = 0; i < pathList.length; i += 1) {
+                TweenMax.to(pathList[i], 0.5, {opacity: 0});
+            }
+            TweenLite.to('#spade2', 0.5, {x: "-=60"});
+            TweenLite.to('#spade1', 0.5, {x: "+=60"});
+        };
+        square.onmouseout = function () {
+            
+            var pathList = document.querySelectorAll('#section1 path:not(#outerSquare):not(#innerSquare):not(#spade1):not(#spade2)');
+            for (var i = 0; i < pathList.length; i += 1) {
+                TweenMax.to(pathList[i], 0.5, {opacity: 1});
+            }
+            TweenLite.to('#spade2', 0.5, {x: "+=60"});
+            TweenLite.to('#spade1', 0.5, {x: "-=60"});
+        };
+    }
 };
 
 var laptop = {
@@ -91,9 +103,9 @@ $(document).ready(function () {
     laptop.initialiseLaptop();
     laptop.clearLaptop();
     tachy.clearTachy();
-    
+
     card.initialiseCard();
-    
+
     // Apply page piling
     $('#pagepiling').pagepiling({
         onLeave: function (index, nextIndex, direction) {
