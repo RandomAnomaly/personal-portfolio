@@ -46,7 +46,7 @@ var card = {
         tl.to('#spade1', 0.5, {x: "+=59"}, 'spadeMoveStart').to('#spade1', 0.5, {y: "+=50"}, 'spadeMoveIn');
 
         //add button
-        tl.to('#button', 0.5, {stroke: "black", fill: "black", opacity: "1"});
+        tl.to('#button rect', 0.5, {stroke: "black", fill: "black", opacity: "1"});
 
         tl.addLabel('yoyoStart').to('#spade1', 0.3, {y: "-=20", yoyo:true, repeat:-1}).to('#spade2', 0.3, {y: "+=20", yoyo:true, repeat:-1}, 'yoyoStart');
 

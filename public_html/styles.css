@@ -60,3 +60,11 @@ h1, p {
     fill: black !important;
     fill-opacity: 0 !important;
 }
+
+#message{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 999;
+}
