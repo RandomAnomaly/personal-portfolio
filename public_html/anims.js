@@ -29,34 +29,39 @@ var display = {
 
 var card = {
     initialiseCard: function () {
-        
-        
-        var tl = new TimelineLite();
+
+
+        var tl = new TimelineMax();
         tl.stop();
         tl.addLabel('cardFadeStart');
         var pathList = document.querySelectorAll('#section1 path:not(#outerSquare):not(#innerSquare):not(#spade1):not(#spade2)');
-        
-        for(var i = 0; i < pathList.length; i += 1){
+
+        for (var i = 0; i < pathList.length; i += 1) {
             tl.to(pathList[i], 0.5, {opacity: 0}, 'cardFadeStart');
         }
-        
-        tl.addLabel('spadeMoveStart').to('#spade2', 0.5, {x: "-=59"}).addLabel('spadeMoveIn').to('#spade2', 0.5, {y: "-=70"});
-        tl.to('#spade1', 0.5, {x: "+=59"}, 'spadeMoveStart').to('#spade1', 0.5, {y: "+=70"}, 'spadeMoveIn');
-        
+
+        tl.addLabel('rotSpade').to('#spade1', 0.5, {rotation: 180, transformOrigin: "50% 50%"}).to('#spade2', 0.5, {rotation: -180, transformOrigin: "50% 50%"}, 'rotSpade');
+
+        tl.addLabel('spadeMoveStart').to('#spade2', 0.5, {x: "-=59"}).addLabel('spadeMoveIn').to('#spade2', 0.5, {y: "-=50"});
+        tl.to('#spade1', 0.5, {x: "+=59"}, 'spadeMoveStart').to('#spade1', 0.5, {y: "+=50"}, 'spadeMoveIn');
+
         //add button
-        tl.to('#button', 0.5, {stroke: "black", fill:"black", opacity:"1"});
-        
-        
-        
+        tl.to('#button', 0.5, {stroke: "black", fill: "black", opacity: "1"});
+
+        tl.addLabel('yoyoStart').to('#spade1', 0.3, {y: "-=20", yoyo:true, repeat:-1}).to('#spade2', 0.3, {y: "+=20", yoyo:true, repeat:-1}, 'yoyoStart');
+
         var square = document.querySelector('#outerSquare');
         square.onmouseover = function () {
             tl.play();
         };
         square.onmouseout = function () {
+            if(tl.getLabelBefore() === 'yoyoStart'){
+                tl.seek('yoyoStart');
+            }
             tl.reverse();
         };
-        
-        var button =document.querySelector('#button');
+
+        var button = document.querySelector('#button');
         button.onmouseover = function () {
             tl.play();
         };
@@ -64,7 +69,7 @@ var card = {
             tl.reverse();
         };
     }
-    
+
 };
 
 var laptop = {
